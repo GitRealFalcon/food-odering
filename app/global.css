@@ -1,0 +1,176 @@
+/* stylelint-disable at-rule-no-unknown */
+@import 'tailwindcss';
+@import 'uniwind';
+
+@source "../components/**/*.{js,jsx,ts,tsx}";
+
+@theme{
+    /* Colors */
+    --color-red-100 : #D33B0D;
+    --color-green-100 : #084137;
+    --color-primary : #FE8C00;
+    --color-white-100 : #fafafa;
+    --color-white-200 : #FE8C00;
+    --color-gray-100 : #878787;
+    --color-dark-100 : #181C2E;
+    --color-error : #F14141;
+    --color-success : #2F9B65;
+
+    /* Fonts */
+    --font-quicksand-bold : "Quicksand-Bold";
+    --font-quicksand-light : "Quicksand-Light";
+    --font-quicksand-medium : "Quicksand-Medium";
+    --font-quicksand-regular : "Quicksand-Regular";
+    --font-quicksand-semibold : "Quicksand-SemiBold";
+
+}
+
+@layer utilities {
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    .flex-between {
+        @apply flex items-center justify-between;
+    }
+
+    .flex-start {
+        @apply flex items-start justify-center;
+    }
+}
+
+@layer components {
+    .cart-btn {
+        @apply flex items-center justify-center size-10 rounded-full bg-dark-100;
+    }
+
+    .cart-badge {
+        @apply absolute -top-2 -right-1 flex items-center justify-center size-5 bg-primary rounded-full;
+    }
+
+    .cart-item {
+        @apply flex flex-row items-end justify-between mb-4 bg-white rounded-xl p-3 shadow-md shadow-dark-100/10;
+    }
+
+    .cart-item__image {
+        @apply size-24 bg-primary/10 rounded-lg flex items-center justify-center;
+    }
+
+    .cart-item__actions {
+        @apply flex flex-row items-center justify-center size-5 bg-primary/10 rounded-md;
+    }
+
+    .custom-btn {
+        @apply bg-primary rounded-full p-3 w-full flex flex-row justify-center;
+    }
+
+    .custom-header {
+        @apply w-full flex flex-row items-center justify-between mb-10;
+    }
+
+    .label {
+        @apply text-base text-start w-full text-gray-500 pl-2;
+        font-family: var(--font-quicksand-medium);
+    }
+
+    .input {
+        @apply rounded-lg p-3 w-full text-base text-dark-100 border-b leading-5;
+        font-family: var(--font-quicksand-semibold);
+    }
+
+    .filter {
+        @apply px-6 py-3 rounded-full mr-2 shadow-sm shadow-black/10;
+    }
+
+    .menu-card {
+        @apply relative py-9 px-3.5 pt-24 flex items-center justify-end bg-white shadow-md shadow-black/10 rounded-3xl;
+    }
+
+    .profile-field {
+        @apply flex flex-row items-center justify-start mb-4;
+    }
+
+    .profile-field__icon {
+        @apply size-12 rounded-full bg-primary/10 flex items-center justify-center mr-3;
+    }
+
+    .searchbar {
+        @apply relative flex flex-row items-center justify-center w-full bg-white shadow-md shadow-black/10 rounded-full text-dark-100 gap-5;
+        font-family: var(--font-quicksand-medium);
+    }
+
+    .tab-icon {
+        @apply flex min-w-20 items-center justify-center min-h-full gap-1 mt-12;
+    }
+
+    .offer-card {
+        @apply w-full h-40 my-3 rounded-xl overflow-hidden shadow-lg flex items-center;
+    }
+
+    .offer-card__info {
+        @apply flex-1 h-full flex flex-col justify-center items-start gap-4;
+    }
+
+    .profile-avatar {
+        @apply relative size-28 border-white border-2 rounded-full;
+    }
+
+    .profile-edit {
+        @apply flex items-center justify-center absolute bottom-2 right-0 bg-primary border-2 border-white size-7 p-2 rounded-full;
+    }
+
+    .h1-bold {
+        @apply text-3xl;
+        font-family: var(--font-quicksand-bold);
+    }
+
+    .h3-bold {
+        @apply text-xl;
+        font-family: var(--font-quicksand-bold);
+    }
+
+    .base-bold {
+        @apply text-lg;
+        font-family: var(--font-quicksand-bold);
+    }
+
+    .base-semibold {
+        @apply text-lg;
+        font-family: var(--font-quicksand-semibold);
+    }
+
+    .base-regular {
+        @apply text-lg;
+        font-family: var(--font-quicksand-regular);
+    }
+
+    .paragraph-bold {
+        @apply text-base;
+        font-family: var(--font-quicksand-bold);
+    }
+
+    .paragraph-semibold {
+        @apply text-base;
+        font-family: var(--font-quicksand-semibold);
+    }
+
+    .paragraph-medium {
+        @apply text-base;
+        font-family: var(--font-quicksand-medium);
+    }
+
+    .body-medium {
+        @apply text-sm;
+        font-family: var(--font-quicksand-medium);
+    }
+
+    .body-regular {
+        @apply text-sm;
+        font-family: var(--font-quicksand-regular);
+    }
+
+    .small-bold {
+        @apply text-xs;
+        font-family: var(--font-quicksand-bold);
+    }
+}
