@@ -7,13 +7,14 @@ import { useDebouncedCallback } from "use-debounce"
 const Search = () => {
   const params = useLocalSearchParams<{ query: string }>()
   const [Query, setQuery] = useState(params.query)
-  const debounceSearch = useDebouncedCallback(
-    (text: string) => router.setParams({ query: text }),
-    500
-  )
+
   const handleSearch = (text: string) => {
     setQuery(text)
-    debounceSearch(text)
+    if(!text) router.setParams({query : undefined})
+  }
+
+  const handleSubmit = ()=>{
+    if(Query.trim()) router.setParams({query : Query})
   }
   return (
     <View className='searchbar'>
@@ -23,9 +24,11 @@ const Search = () => {
         value={Query}
         onChangeText={handleSearch}
         placeholderTextColor={"#A0A0A0"}
+        onSubmitEditing={handleSubmit}
+        returnKeyType='search'
       />
 
-      <TouchableOpacity className='pr-5' onPress={() => console.log("Search Pressed")}>
+      <TouchableOpacity className='pr-5' onPress={() => router.setParams({query : Query})}>
         <Image
           source={images.search}
           className='size-6'
